@@ -2,7 +2,7 @@
 
 ### :round_pushpin: <strong>Sobre o projeto:</strong>
 
-O objetivo desse projeto foi desenvolver um programa para uma empresa fictícia que receba o cadastro de candidados
+O objetivo desse projeto foi desenvolver um programa para uma empresa fictícia que receba o cadastro de candidatos
 para duas vagas e, considerando os requisitos necessários, selecionava os cadidatos aptos as vagas!
 
 As vagas são:
