@@ -6,8 +6,8 @@ O objetivo desse projeto foi desenvolver um programa para uma empresa fictícia 
 para duas vagas e, considerando os requisitos necessários, selecionava os cadidatos aptos as vagas!
 
 As vagas são:
-:small_blue_diamond: e: Analista de Dados
-:small_blue_diamond: t: Cientista de Dados
+:small_blue_diamond: Analista de Dados
+:small_blue_diamond: Cientista de Dados
 
 Para passar no filtro e concorrer a vaga, no resumo fornecido pelos candidatos deveriam haver alguma palavra chave:
 :small_orange_diamond: Vaga Analista de Dados com as palavras chaves: Python, PowerBI, SQL, Boa comunicação
