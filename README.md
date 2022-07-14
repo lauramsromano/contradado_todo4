@@ -10,7 +10,9 @@ As vagas são:
 :small_blue_diamond: Cientista de Dados
 
 Para passar no filtro e concorrer a vaga, no resumo fornecido pelos candidatos deveriam haver alguma palavra chave:
+
 :small_orange_diamond: Vaga Analista de Dados com as palavras chaves: Python, PowerBI, SQL, Boa comunicação
+
 :small_orange_diamond: Vaga Cientista de Dados com as palavras chaves: Python, Banco de dados, Machine Learning, Resolução De Problemas, Estatística
 
 O programa inicia solicitando as informações do cadidato como nome, a vaga a selecionada e um resumo com suas habilidades.
