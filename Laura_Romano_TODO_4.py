@@ -6,10 +6,8 @@ dicionario_cadidatos = dict()
 
 while True:  # entrando no programa
     voltar = True
-    verificacao = input(
-        "Se você deseja fazer uma nova inscrição, digite [1].\nMas, se deseja verificar os cadidatos na base, digite [2]: ")
-    if verificacao == '1' or verificacao == '2':
-        verificacao = int(verificacao)
+    verificacao = int(input(
+        "Se você deseja fazer uma nova inscrição, digite [1].\nMas, se deseja verificar os cadidatos na base, digite [2]: "))
     if not(verificacao == 1 or verificacao == 2):
         voltar == True
     else:
@@ -21,15 +19,14 @@ while True:  # recebendo as informações dos cadidatos
     if verificacao == 1:
         print('----------')
         nome_candidato = input(
-            'Digite o nome completo do candidato: ').lower()
+            'Digite o nome completo do candidato: ')
         lista_candidato = []
-
-        vaga_candidato_escolha = input(
-            'Digite [1] para vaga de Analista de Dados ou digite [2] para vaga de Cientista de Dados: ').lower()
-        if vaga_candidato_escolha == '1':
-            vaga_candidato = 'analista de dados'
-        elif vaga_candidato_escolha == '2':
-            vaga_candidato = 'cientista de dados'
+        vaga_candidato_escolha = int(input(
+            'Digite [1] para vaga de Analista de Dados ou digite [2] para vaga de Cientista de Dados: '))
+        if vaga_candidato_escolha == 1:
+            vaga_candidato = 'Analista de Dados'
+        elif vaga_candidato_escolha == 2:
+            vaga_candidato = 'Cientista de Dados'
 
         # criando e lendo o arquivo .txt com o resumo dos respectivos candidatos
         arquivo_candidato = open(nome_candidato + str(id) + '.txt', 'w')
@@ -73,7 +70,7 @@ count_cientista_requisito = 0
 
 # verificando a vaga que os cadidatos se cadastraram (no caso, analista de dados)
 for chave, valor in dicionario_cadidatos.items():
-    if 'analista' in valor[0]:
+    if 'Analista' in valor[0]:
         count_analista += 1
         dicionario_analistas.update({chave: valor})
         # verificando se há as palavras chaves no resumo dos candidatos q se cadastraram para vaga de analista
@@ -83,7 +80,7 @@ for chave, valor in dicionario_cadidatos.items():
                 dic_analista_ok.update({chave: valor})
 
     # verificando a vaga que os cadidatos se cadastraram (no caso, cientista de dados)
-    elif 'cientista' in valor[0]:
+    elif 'Cientista' in valor[0]:
         count_cientista += 1
         dicionario_cientista.update({chave: valor})
         # verificando se há as palavras chaves no resumo dos candidatos q se cadastraram para vaga de cientista
@@ -92,19 +89,35 @@ for chave, valor in dicionario_cadidatos.items():
                 count_cientista_requisito += 1
                 dic_cientista_ok.update({chave: valor})
 
+print('----------')
+
+# trazendo a contagem de cadidatos e os respectivos cadidatos para a vaga (no caso, analista de dados)
+print(
+    f'A quantidade de cadidatos cadastrado para vaga de Analista de Dados são: {count_analista}.\nSegue abaixo os cadidatos:')
+for chave in dicionario_analistas:
+    print(
+        f'Cadidato: {[chave]}.\nVaga: {dicionario_analistas[chave][0]}.\nResumo: {dicionario_analistas[chave][1]}')
 
 print('----------')
-# trazendo a contagem de cadidatos e os respectivos cadidatos para a vaga (no caso, analista de dados)
-print('A quantidade de cadidatos cadastrado para vaga de Analista de Dados são: {}.\nSegue abaixo os cadidatos:\n{}'.format(
-    count_analista, dicionario_analistas))
 # trazendo a contagem de cadidatos e os respectivos cadidatos para a vaga que atendem os requisitos (palavras chaves no resumo)
-print('A quantidade de cadidatos cadastrado para vaga de Analista de Dados que atende os requisitos são: {}.\nSegue abaixo os cadidatos:\n{}'.format(
-    count_analista_requisito, dic_analista_ok))
+print(
+    f'A quantidade de cadidatos cadastrado para vaga de Analista de Dados que atende os requisitos são: {count_analista_requisito}.\nSegue abaixo os cadidatos:')
+for chave in dic_analista_ok:
+    print(
+        f'Cadidato: {[chave]}.\nVaga: {dic_analista_ok[chave][0]}.\nResumo: {dic_analista_ok[chave][1]}')
 
 print('----------')
 # trazendo a contagem de cadidatos e os respectivos cadidatos para a vaga (no caso, cientista de dados)
-print('A quantidade de cadidatos cadastrado para vaga de Cientísta de Dados são: {}.\nSegue abaixo os cadidatos:\n{}'.format(
-    count_cientista, dicionario_cientista))
+print(
+    f'A quantidade de cadidatos cadastrado para vaga de Cientista de Dados são: {count_cientista}.\nSegue abaixo os cadidatos:')
+for chave in dicionario_cientista:
+    print(
+        f'Cadidato: {[chave]}.\nVaga: {dicionario_cientista[chave][0]}.\nResumo: {dicionario_cientista[chave][1]}')
+
+print('----------')
 # trazendo a contagem de cadidatos e os respectivos cadidatos para a vaga que atendem os requisitos (palavras chaves no resumo)
-print('A quantidade de cadidatos cadastrado para vaga de Cientísta de Dados que atende os requisitos são: {}.\nSegue abaixo os cadidatos:\n{}'.format(
-    count_cientista_requisito, dic_cientista_ok))
+print(
+    f'A quantidade de cadidatos cadastrado para vaga de Cientista de Dados que atende os requisitos são: {count_cientista_requisito}.\nSegue abaixo os cadidatos:')
+for chave in dic_cientista_ok:
+    print(
+        f'Cadidato: {[chave]}.\nVaga: {dic_cientista_ok[chave][0]}.\nResumo: {dic_cientista_ok[chave][1]}')
